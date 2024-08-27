@@ -1,0 +1,36 @@
+services:
+  web:
+    build: .
+    ports:
+      - "5001:5001"
+    environment:
+      - FLASK_APP=app.main.py
+      - FLASK_ENV=development
+    depends_on:
+      - database-flask-ddd
+    volumes:
+      - .:/app
+    networks:
+        - network-flask-ddd
+
+  database-flask-ddd:
+    image: mysql:8.0  # Actualizado para soporte ARM64
+    platform: linux/amd64  # Opcional, para forzar la emulación si se necesita una versión específica
+    environment:
+      MYSQL_DATABASE: library_db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: password
+    ports:
+      - "3316:3306"
+    volumes:
+      - db-data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - network-flask-ddd
+
+volumes:
+  db-data:
+networks:
+  network-flask-ddd:
+    driver: bridge
