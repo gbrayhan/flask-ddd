@@ -9,6 +9,16 @@ def init_app(app):
         result = book_management.add_book(data)
         return jsonify(result), 201
 
+    @app.route('/books', methods=['GET'])
+    def list_books():
+        book_management = BookManagement()
+        books = book_management.list_books()
+        print("final books", books)
+        if books['status'] == 'success':
+            return jsonify({'status': 'success', 'data': [book.to_dict() for book in books['data']]})
+        else:
+            return jsonify(books), 400
+
     @app.route('/', methods=['GET'])
     def home():
         """

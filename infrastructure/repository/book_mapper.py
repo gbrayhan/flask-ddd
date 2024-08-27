@@ -8,11 +8,11 @@ class BookMapper:
     def to_domain(book_dto):
         """ Mapea BookDTO a Book del dominio """
         return Book(
-            id=book_dto.id,
             title=book_dto.title,
             author=book_dto.author,
             isbn=book_dto.isbn,
-            published_date=book_dto.published_date
+            published_date=book_dto.published_date,
+            id = book_dto.id
         )
 
     @staticmethod

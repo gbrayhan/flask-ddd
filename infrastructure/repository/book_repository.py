@@ -1,6 +1,9 @@
 from infrastructure.database import db
 from infrastructure.repository.models import BookDTO
 from infrastructure.repository.book_mapper import BookMapper
+from sqlalchemy.exc import SQLAlchemyError
+import logging
+
 
 class BookRepository:
     def add(self, book):
@@ -50,7 +53,12 @@ class BookRepository:
     def list_all(self):
         try:
             book_dtos = BookDTO.query.all()
-            return [BookMapper.to_domain(book_dto) for book_dto in book_dtos]
+            print(book_dtos)
+        except SQLAlchemyError as e:
+            logging.error(f"Database error occurred: {e}")  # Registra el error en el log
+            return {'status': 'error', 'message': 'Failed to fetch books due to a database error'}
         except Exception as e:
-            return []
+            logging.error(f"Unexpected error occurred on repository: {e}")  # Captura cualquier otro error inesperado
+            return {'status': 'error', 'message': 'An unexpected error occurred'}
+        return [BookMapper.to_domain(book_dto) for book_dto in book_dtos]
 

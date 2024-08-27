@@ -1,6 +1,6 @@
 from domain.entities.book import Book
 from infrastructure.repository.book_repository import BookRepository
-
+import logging
 
 class BookManagement:
     def __init__(self):
@@ -62,7 +62,12 @@ class BookManagement:
         """
         Lista todos los libros en la base de datos.
 
-        :return: Lista de instancias de libros.
+        :return: Lista de instancias de libros o un mensaje de error.
         """
-        books = self.book_repository.list_all()
-        return books
+        try:
+            books = self.book_repository.list_all()
+            print(books)
+            return {'status': 'success', 'data': books}
+        except Exception as e:
+            logging.error(f"Unexpected error when listing books: {e}")
+            return {'status': 'error', 'message': 'An unexpected error occurred while retrieving books'}

@@ -1,25 +1,19 @@
 class Book:
-    def __init__(self, title=None, author=None, isbn=None, published_date=None):
-        """
-        Inicializa una nueva instancia de la clase Book.
-
-        :param id: ID único del libro (opcional).
-        :param title: Título del libro.
-        :param author: Autor del libro.
-        :param isbn: ISBN del libro.
-        :param published_date: Fecha de publicación del libro (opcional).
-        """
-        self.id = id
+    def __init__(self, title=None, author=None, isbn=None, published_date=None, id=None):
         self.title = title
         self.author = author
         self.isbn = isbn
         self.published_date = published_date
+        self.id = id
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'title': self.title,
+            'author': self.author,
+            'isbn': self.isbn,
+            'published_date': self.published_date.strftime("%Y-%m-%d") if self.published_date else None
+        }
 
     def __repr__(self):
-        """
-        Representación en cadena de la instancia de Book.
-
-        :return: Una cadena que representa el libro.
-        """
-        return f"<Book {self.title}, ISBN {self.isbn}>"
-
+        return f"<Id {self.id}, Book {self.title}, Author: {self.author}, ISBN: {self.isbn}>"
