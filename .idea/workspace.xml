@@ -5,29 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="25131479-a293-4012-9bc2-dfbfc539993f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/flaskProject.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/ports/http_api.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/use_cases/book_management.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/domain/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/domain/entities/book.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infrastructure/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infrastructure/database.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infrastructure/repository/book_mapper.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infrastructure/repository/book_repository.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infrastructure/repository/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/init.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +147,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1724701224643</updated>
-      <workItem from="1724701229807" duration="8548000" />
+      <workItem from="1724701229807" duration="9275000" />
     </task>
     <servers />
   </component>
