@@ -6,18 +6,18 @@ from .models import BookDTO
 class BookMapper:
     @staticmethod
     def to_domain(book_dto):
-        """ Mapea BookDTO a Book del dominio """
+        """ Maps BookDTO to domain Book """
         return Book(
             title=book_dto.title,
             author=book_dto.author,
             isbn=book_dto.isbn,
             published_date=book_dto.published_date,
-            id = book_dto.id
+            id=book_dto.id
         )
 
     @staticmethod
     def to_dto(book):
-        """ Mapea Book del dominio a BookDTO """
+        """ Maps domain Book to BookDTO """
         return BookDTO(
             title=book.title,
             author=book.author,

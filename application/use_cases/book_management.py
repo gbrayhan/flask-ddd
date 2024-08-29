@@ -8,61 +8,61 @@ class BookManagement:
 
     def add_book(self, data):
         """
-        Crea un nuevo libro y lo guarda en la base de datos.
+        Create a new book and save it to the database.
 
-        :param data: Un diccionario con los datos del libro (título, autor, ISBN).
-        :return: Diccionario con información del libro agregado o error.
+        :param data: A dictionary with the book's details (title, author, ISBN).
+        :return: Dictionary with information on the added book or an error.
         """
         new_book = Book(data['title'], data['author'], data['isbn'])
         result, error_message = self.book_repository.add(new_book)
         if result:
             return {'status': 'success', 'book': data}
         else:
-            # Proporciona el mensaje de error real para ayudar en la depuración
-            return {'status': 'error', 'message': error_message or 'No se pudo agregar el libro'}
+            # Provides the actual error message to assist in debugging
+            return {'status': 'error', 'message': error_message or 'Failed to add book'}
 
     def remove_book(self, book_id):
         """
-        Elimina un libro de la base de datos por ID.
+        Remove a book from the database by its ID.
 
-        :param book_id: ID del libro a eliminar.
-        :return: Diccionario indicando éxito o fracaso.
+        :param book_id: ID of the book to remove.
+        :return: Dictionary indicating success or failure.
         """
         result = self.book_repository.remove(book_id)
         if result:
-            return {'status': 'success', 'message': 'Libro eliminado correctamente'}
+            return {'status': 'success', 'message': 'Book successfully removed'}
         else:
-            return {'status': 'error', 'message': 'No se pudo eliminar el libro'}
+            return {'status': 'error', 'message': 'Failed to remove book'}
 
     def update_book(self, book_id, data):
         """
-        Actualiza los detalles de un libro existente.
+        Updates the details of an existing book.
 
-        :param book_id: ID del libro a actualizar.
-        :param data: Diccionario con los nuevos datos del libro.
-        :return: Diccionario indicando éxito o fracaso.
+        :param book_id: ID of the book to update.
+        :param data: Dictionary with the new book data.
+        :return: Dictionary indicating success or failure.
         """
         result = self.book_repository.update(book_id, data)
         if result:
-            return {'status': 'success', 'message': 'Libro actualizado correctamente'}
+            return {'status': 'success', 'message': 'Book updated successfully'}
         else:
-            return {'status': 'error', 'message': 'No se pudo actualizar el libro'}
+            return {'status': 'error', 'message': 'Failed to update book'}
 
     def get_book(self, book_id):
         """
-        Obtiene los detalles de un libro por su ID.
+        Retrieves the details of a book by its ID.
 
-        :param book_id: ID del libro.
-        :return: Instancia del libro o None.
+        :param book_id: ID of the book.
+        :return: Book instance or None.
         """
         book = self.book_repository.get(book_id)
         return book
 
     def list_books(self):
         """
-        Lista todos los libros en la base de datos.
+        Lists all the books in the database.
 
-        :return: Lista de instancias de libros o un mensaje de error.
+        :return: List of book instances or an error message.
         """
         try:
             books = self.book_repository.list_all()

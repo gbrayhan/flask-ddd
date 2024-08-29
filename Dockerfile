@@ -1,18 +1,18 @@
-# Usar una imagen base de Python
+# Use a base image of Python
 FROM python:3.9-slim
 
-# Establecer el directorio de trabajo en el contenedor
+# Set the working directory in the container
 WORKDIR /app
 
-# Instalar las dependencias de Python
+# Install Python dependencies
 COPY requirements.txt /app/
 RUN pip install -r requirements.txt
 
-# Copiar el resto del código de la aplicación
+# Copy the rest of the application code
 COPY . /app
 
-# Exponer el puerto que Flask usará
+# Expose the port that Flask will use
 EXPOSE 5001
 
-# Comando para iniciar la aplicación
-CMD ["flask", "run", "--host=0.0.0.0" , "--port=5001"]
+# Command to start the application
+CMD ["flask", "run", "--host=0.0.0.0", "--port=5001"]

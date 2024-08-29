@@ -22,6 +22,6 @@ def init_app(app):
     @app.route('/', methods=['GET'])
     def home():
         """
-        Ruta raíz que devuelve un mensaje de bienvenida.
+        Root route that returns a welcome message.
         """
-        return jsonify({'message': 'Bienvenido a la Biblioteca Online'}), 200
+        return jsonify({'message': 'Welcome to the Online Library'}), 200

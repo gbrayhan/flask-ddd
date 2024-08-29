@@ -1,116 +1,90 @@
-# Biblioteca Online
+# Online Library
 
-## Descripción
+## Description
 
-Biblioteca Online es una aplicación Flask que permite a los usuarios gestionar un catálogo de libros. Los usuarios pueden añadir, eliminar, actualizar y consultar libros en una base de datos.
+The Online Library is a Flask application that allows users to manage a catalog of books. Users can add, delete, update, and query books in a database.
 
-## Características
+## Features
 
-- **Agregar Libros**: Permite a los usuarios añadir libros a la base de datos.
-- **Eliminar Libros**: Los usuarios pueden eliminar libros del catálogo.
-- **Actualizar Libros**: Facilita la actualización de la información de los libros.
-- **Consultar Libros**: Los usuarios pueden consultar la lista de libros disponibles y buscar por diferentes criterios.
+- **Add Books**: Allows users to add books to the database.
+- **Delete Books**: Users can remove books from the catalog.
+- **Update Books**: Facilitates updating book information.
+- **Query Books**: Users can view the list of available books and search by various criteria.
 
-## Tecnologías Utilizadas
+## Technologies Used
 
-- **Flask**: Un microframework para Python basado en Werkzeug, Jinja 2 y buenas intenciones.
-- **SQLAlchemy**: ORM utilizado para interactuar con la base de datos.
-- **MySQL**: Sistema de gestión de base de datos relacional.
+- **Flask**: A microframework for Python based on Werkzeug, Jinja 2, and good intentions.
+- **SQLAlchemy**: ORM used for interacting with the database.
+- **MySQL**: Relational database management system.
 
-## Estructura del Proyecto
+## Environment Setup
 
-\```
-/BibliotecaOnline
-|-- /application
-|   |-- __init__.py
-|   |-- /ports
-|   |   |-- http_api.py
-|   |-- /use_cases
-|       |-- book_management.py
-|-- /domain
-|   |-- __init__.py
-|   |-- /entities
-|       |-- book.py
-|-- /infrastructure
-|   |-- __init__.py
-|   |-- /database
-|       |-- __init__.py
-|       |-- models.py
-|-- /tests
-|   |-- __init__.py
-|   |-- test_book_management.py
-|-- docker-compose.yml
-|-- Dockerfile
-|-- requirements.txt
-|-- README.md
-\```
-
-## Configuración del Entorno
-
-### Prerrequisitos
+### Prerequisites
 
 - Python 3.8+
 - pip
-- virtualenv (opcional)
+- virtualenv (optional)
 - Docker
 
-### Instalación
+### Installation
 
-1. **Clonar el Repositorio:**
+1. **Clone the Repository:**
 
-   \```
-   git clone https://github.com/usuario/BibliotecaOnline.git
-   cd BibliotecaOnline
-   \```
+   ```bash
+   git clone https://github.com/user/OnlineLibrary.git cd OnlineLibrary
+ 
+   ```  
 
-2. **Configurar el Entorno Virtual (Opcional):**
 
-   \```
-   python -m venv venv
-   source venv/bin/activate  # En Windows use `venv\Scripts\activate`
-   \```
-
-3. **Instalar Dependencias:**
-
-   \```
+2. **Set Up the Virtual Environment (Optional):**
+    
+   ```bash
+   python -m venv venv source venv/bin/activate # On Windows use venv\Scripts\activate
+   ```
+   
+3. **Install Dependencies:**
+    
+    ```bash
    pip install -r requirements.txt
-   \```
+   ```
+4. **Docker Configuration:**
 
-4. **Configuración de Docker:**
+- Ensure you have Docker and Docker Compose installed.
+- Launch the services:
 
-   - Asegúrate de tener Docker y Docker Compose instalados.
-   - Levanta los servicios:
+   ```bash  
+   docker-compose up -d
+   ```
 
-   \```
-   docker-compose up --build
-   \```
 
-### Uso
+### Usage
 
-Para iniciar la aplicación, ejecuta:
+To start the application, run:
 
-\```
-flask run
-\```
+```bash
+flask run --host=local --port=5001
+```
 
-La API estará disponible en `http://localhost:5001`.
+The API will be available at `http://localhost:5001`.
 
 ### Endpoints
 
-- **POST /books**: Añade un nuevo libro.
-- **GET /books**: Lista todos los libros.
-- **PUT /books/{id}**: Actualiza un libro específico.
-- **DELETE /books/{id}**: Elimina un libro.
+- **POST /books**: Adds a new book.
+- **GET /books**: Lists all books.
+- **PUT /books/{id}**: Updates a specific book.
+- **DELETE /books/{id}**: Deletes a book.
 
-## Contribuir
+## Contributing
 
-Para contribuir al proyecto, considera lo siguiente:
+To contribute to the project, please follow these steps:
 
-1. **Fork el Repositorio**: Haz un 'fork' del proyecto a tu cuenta personal.
-2. **Crea una Rama**: Crea una rama para cada característica o mejora.
-3. **Haz tus Cambios**: Añade o cambia funcionalidades.
-4. **Envía un Pull Request**: Para integrar tus cambios en el proyecto principal.
+1. **Fork the Repository**: Fork the project to your personal account.
+2. **Create a Branch**: Create a branch for each feature or improvement.
+3. **Make Your Changes**: Add or modify functionalities.
+4. **Submit a Pull Request**: To merge your changes into the main project.
 
-## Licencia
+## License
 
-Este proyecto está bajo la Licencia MIT - vea el archivo [LICENSE.md](LICENSE) para detalles.
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details.
+
+
