@@ -1,21 +1,22 @@
-# Online Library
+# Clean Architecture Application in Python and Flask
 
-## Description
+## About the Application
 
-The Online Library is a Flask application that allows users to manage a catalog of books. Users can add, delete, update, and query books in a database.
+This project is a demonstration of Clean Architecture principles applied to a Python application using the Flask framework. The application is structured around the Domain-Driven Design (DDD) methodology to ensure a modular, scalable, and maintainable codebase. It leverages Docker for containerization, making the development and deployment process straightforward and consistent across different environments.
 
-## Features
-
-- **Add Books**: Allows users to add books to the database.
-- **Delete Books**: Users can remove books from the catalog.
-- **Update Books**: Facilitates updating book information.
-- **Query Books**: Users can view the list of available books and search by various criteria.
+### Key Features:
+- **Clean Architecture**: Incorporates a decoupled architecture that separates core business logic from interface and infrastructure concerns. This separation enhances maintainability and allows for independent development and testing of each layer.
+- **Domain-Driven Design (DDD)**: Focuses on complex domain logic centralizing the business logic in the domain layer. This approach facilitates a deeper understanding and management of the domain model which is particularly beneficial for complex applications.
+- **Docker Integration**: Utilizes Docker to encapsulate the application environment, ensuring that it runs uniformly across different setups. Docker simplifies dependencies management and aligns development environments to production configurations.
+- **SQL Database**: Employs a SQL database to manage application data, providing robust, reliable, and scalable data storage solutions.
+- **ORM Tool**: Uses an Object-Relational Mapping (ORM) tool to abstract database interactions, simplifying data manipulation and ensuring database agnosticism. This abstraction allows developers to focus more on the domain logic rather than database specifics.
 
 ## Technologies Used
 
-- **Flask**: A microframework for Python based on Werkzeug, Jinja 2, and good intentions.
-- **SQLAlchemy**: ORM used for interacting with the database.
-- **MySQL**: Relational database management system.
+- **Flask**: A lightweight WSGI web application framework in Python that provides tools, libraries, and technologies to build a web application.
+- **SQLAlchemy**: An ORM and SQL toolkit for Python that provides a full power and flexibility of SQL.
+- **MySQL/PostgreSQL**: Supported SQL databases that provide reliable backends for storing persistent data of the application.
+- **Docker**: A set of platform as a service products that use OS-level virtualization to deliver software in packages called containers.
 
 ## Environment Setup
 
